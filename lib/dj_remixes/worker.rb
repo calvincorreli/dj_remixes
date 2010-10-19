@@ -20,7 +20,7 @@ module DJ
     end
     
     def worker_class_name
-      if self.id
+      if self.is_a?(ActiveRecord::Base)
         @worker_class_name ||= File.join(self.class.to_s.underscore, self.id.to_s)
       else
         @worker_class_name ||= self.class.to_s.underscore
