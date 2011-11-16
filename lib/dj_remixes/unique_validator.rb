@@ -13,5 +13,6 @@ class UniqueDJValidator < ActiveModel::Validator
 end
 
 Delayed::Worker.backend.send(:class_eval) do
-  validates_with UniqueDJValidator
+  # Lars: Removed - it failed, and we're not using it - 2011-11-16
+  # validates_with UniqueDJValidator
 end
